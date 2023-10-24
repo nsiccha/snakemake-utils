@@ -5,8 +5,7 @@ rule all:
 
 rule python_output:
     output: "output/python.json"
-    log: "logs/python.log"
-    # conda: "env.yaml"
+    log: stderr="logs/python.log"
     script: "scripts/test.py" 
 
 rule julia_output:
@@ -19,4 +18,4 @@ rule r_output:
     output: "output/R.json"
     log: "logs/" 
     conda: "env.yaml"
-    script: "scripts/test.R" 
+    script: "scripts/test.R"  
