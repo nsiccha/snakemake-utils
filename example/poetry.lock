@@ -1128,9 +1128,9 @@ snakemake = "*"
 
 [package.source]
 type = "git"
-url = "git@github.com:nsiccha/snakemake-utils.git"
+url = "git@github.com:nsiccha/snakemakeutils.git"
 reference = "HEAD"
-resolved_reference = "87a351ff7953ced9a652b58836b18517fbe523a9"
+resolved_reference = "9dba4b5c963c017caf030ffa4f2f11f90965b203"
 subdirectory = "python"
 
 [[package]]
@@ -1339,4 +1339,4 @@ pyyaml = ">=6.0,<7.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a42fe385cd4f77e0d9ed9077d89d3b12cbd2350d540d2d83b7746ef612a12d2a"
+content-hash = "e29c311667e926ac418dccbbf560135681876f1c12ad436aff82516f50b3f1d1"
