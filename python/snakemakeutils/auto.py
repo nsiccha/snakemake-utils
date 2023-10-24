@@ -13,6 +13,8 @@ def identity(x): return x
 
 def auto(ctx, fn=None, post=identity):
     if fn is None: return lambda fn: auto(ctx, fn, post=post)
+
+    snakemake = ctx["snakemake"]
     rv = fn(input=snakemake.input, output=snakemake.output, **snakemake.wildcards)
     if rv is None: return
     return [
