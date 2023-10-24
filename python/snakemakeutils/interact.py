@@ -1,2 +1,2 @@
-def interact(): 
-    print("Hello snakemake!")
+def interact(*args, **kwargs): 
+    print("Hello snakemake!", args, kwargs)
