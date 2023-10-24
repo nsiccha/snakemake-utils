@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
   { name="Nikolas Siccha", email="nikolassiccha@gmail.com" },
 ]
-dependencies = ["snakemake", "pandas", "json"]
+dependencies = ["snakemake", "pandas"]
 description = "A bundle of snakemake utilities"
 readme = "README.md"
 requires-python = ">=3.7"
