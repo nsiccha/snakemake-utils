@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "snakemake-utils"
+version = "0.0.1"
+authors = [
+  { name="Nikolas Siccha", email="nikolassiccha@gmail.com" },
+]
+dependencies = ["snakemake", "pandas", "json"]
+description = "A bundle of snakemake utilities"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/nsiccha/snakemake-utils"
+"Bug Tracker" = "https://github.com/nsiccha/snakemake-utils/issues"
