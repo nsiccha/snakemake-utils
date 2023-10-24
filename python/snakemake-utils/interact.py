@@ -1,1 +1,2 @@
-def interact(): pass
+def interact(): 
+    print("Hello snakemake!")

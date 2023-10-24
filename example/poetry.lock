@@ -1067,7 +1067,7 @@ pep = ["eido", "peppy"]
 reports = ["pygments"]
 
 [[package]]
-name = "snakemake-utils"
+name = "snakemakeutils"
 version = "0.0.1"
 description = "A bundle of snakemake utilities"
 optional = false
@@ -1083,7 +1083,7 @@ snakemake = "*"
 type = "git"
 url = "git@github.com:nsiccha/snakemake-utils.git"
 reference = "HEAD"
-resolved_reference = "ab01fb349a828939439bbe45a3418727437a528a"
+resolved_reference = "9ac317903449b995e4c53017f4243a42ecf46981"
 subdirectory = "python"
 
 [[package]]
@@ -1281,4 +1281,4 @@ pyyaml = ">=6.0,<7.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "a8ab629cfb5369c0d53307a5790006c3e92aae354cf385fc650b40f11f92ce7a"
+content-hash = "a42fe385cd4f77e0d9ed9077d89d3b12cbd2350d540d2d83b7746ef612a12d2a"

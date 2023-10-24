@@ -1,6 +1,5 @@
 import inspect
 
-
 def identity(x): return x
 
 def auto_snakemake(snakemake, fn, post=identity):
