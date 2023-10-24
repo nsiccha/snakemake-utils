@@ -11,7 +11,8 @@ def write_json(path, data):
 
 def identity(x): return x
 
-def auto(fn, snakemake=None, post=identity):
+def auto(ctx, fn=None, post=identity):
+    if fn is None: return lambda fn: auto(ctx, fn, post=post)
     rv = fn(input=snakemake.input, output=snakemake.output, **snakemake.wildcards)
     if rv is None: return
     return [

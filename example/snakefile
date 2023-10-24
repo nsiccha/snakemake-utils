@@ -1,3 +1,22 @@
+include: "snakemake/common.smk"
+
 rule all:
-    output: "output/test.json"
-    script: "scripts/test.py"
+    input: "output/lint.log", "output/python.json"#, "output/julia.json", "output/R.json"
+
+rule python_output:
+    output: "output/python.json"
+    log: "logs/"
+    # conda: "env.yaml"
+    script: "scripts/test.py" 
+
+rule julia_output:
+    output: "output/julia.json"
+    log: "logs/"
+    conda: "env.yaml"
+    script: "scripts/test.jl" 
+
+rule r_output:
+    output: "output/R.json"
+    log: "logs/" 
+    conda: "env.yaml"
+    script: "scripts/test.R" 
