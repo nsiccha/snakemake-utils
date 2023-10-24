@@ -27,7 +27,8 @@ def handle_log(log):
         if stdout == stderr:
             sys.stdout = sys.stderr = open(stderr, "w")
         else:
-            if stdout is not None: sys.stdout = open(stdout, "w")
+            if stdout is not None: 
+                sys.stdout = open(stdout, "w")
             if stderr is not None: sys.stderr = open(stderr, "w")
 
 def auto(ctx, fn=None, post=identity):
