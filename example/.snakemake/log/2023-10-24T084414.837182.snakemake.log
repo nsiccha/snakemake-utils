@@ -1,0 +1,32 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+total        1
+
+Select jobs to execute...
+
+[Tue Oct 24 08:44:14 2023]
+rule all:
+    output: output/test.json
+    jobid: 0
+    reason: Missing output files: output/test.json
+    resources: tmpdir=/tmp
+
+[Tue Oct 24 08:44:15 2023]
+Error in rule all:
+    jobid: 0
+    output: output/test.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 3:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/blog-jhyet7S5-py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpkx6v_abz.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 3, in __rule_all
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-24T084414.837182.snakemake.log
