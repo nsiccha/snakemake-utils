@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "snakemake-utils"
+name = "snakemakeutils"
 version = "0.0.1"
 authors = [
   { name="Nikolas Siccha", email="nikolassiccha@gmail.com" },
@@ -21,3 +21,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/nsiccha/snakemake-utils"
 "Bug Tracker" = "https://github.com/nsiccha/snakemake-utils/issues"
+
+[project.scripts]
+snakemakeutils-interact = "snakemakeutils:interact"
