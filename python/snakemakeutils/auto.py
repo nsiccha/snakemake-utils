@@ -14,8 +14,7 @@ def identity(x): return x
 def auto(fn, snakemake=None, post=identity):
     rv = fn(input=snakemake.input, output=snakemake.output, **snakemake.wildcards)
     if rv is None: return
-    return list(map(write_json, snakemake.output, rv))
-    if inspect.isgeneratorfunction(rv):
-
-    write_json(snakemake.output[0], post(dict(**snakemake.wildcards) | rv))
-    return rv
+    return [
+        write_json(outputi, post(dict(**snakemake.wildcards) | rvi))
+        for outputi, rvi in zip(snakemake.output, rv)
+    ]
