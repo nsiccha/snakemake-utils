@@ -1130,7 +1130,7 @@ snakemake = "*"
 type = "git"
 url = "git@github.com:nsiccha/snakemakeutils.git"
 reference = "HEAD"
-resolved_reference = "6fbefe94dab911cedf0107c247b51a4168fc2cbb"
+resolved_reference = "8ae80d9cc2d91e261a2c04eb05aa002c9452308c"
 subdirectory = "python"
 
 [[package]]
