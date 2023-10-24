@@ -5,7 +5,7 @@ rule all:
 
 rule python_output:
     output: "output/python.json"
-    log: "logs/"
+    log: "logs/python.log"
     # conda: "env.yaml"
     script: "scripts/test.py" 
 
