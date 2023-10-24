@@ -1,0 +1,2 @@
+stanfile_path: "stan/"
+compiled_path: "stan/exe/"
