@@ -61,7 +61,7 @@ def process_log(info):
     info.jobs_df = None
     if not info.slurm_log_paths: 
         return print("[Jobs] No slurm logs found!")
-    info.jobs_df = pd.DataFrame(map(path_to_dict, jobs))
+    info.jobs_df = pd.DataFrame(map(path_to_dict, info.slurm_log_paths))
     for error_log_path in info.error_log_paths:
         info.jobs_df.loc[info.jobs_df.PATH == error_log_path, "STATE"] = "ERRORED"
     info.slurm_queue = subprocess.run(['slurm', 'q'], stdout=subprocess.PIPE).stdout.decode('utf-8')
@@ -88,14 +88,14 @@ def quit(info):
 def make(info, target=None):
     if target is None: 
         target = inquirer.text(message="Target?").execute()
-    print_and_run(f"{info.snakemake} {target} {info.snakemake_args}")
+    print_and_run(f"{info.full_snakemake} {target} {info.snakemake_args}")
     update_logs(info)
 
 def select_make(info):
     info.output_files = re.findall(
         r"    output: (.+)", 
         subprocess.run(
-            info.snakemake.split() + ['-Fn'], stdout=subprocess.PIPE
+            info.snakemake.split() + ["-Fn"], stdout=subprocess.PIPE
         ).stdout.decode('utf-8')
     )
     make(info, inquirer.fuzzy(message="Target?", choices=info.output_files).execute())
@@ -120,15 +120,16 @@ def interact():
     parser.add_argument("--path", default=".")
     parser.add_argument("--hostname", default=socket.gethostname())
     parser.add_argument("--snakemake", default=None)
+    parser.add_argument("--screen", default=None)
     info, snakemake_args = parser.parse_known_args()
     info.path = pathlib.Path(info.path)
     info.on_triton = "triton" in info.hostname
     if info.snakemake is None:
-        if info.on_triton:
-            info.snakemake = "poetry run snakemake"
-        else:
-            info.snakemake = "poetry run snakemake"
-    info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
+        info.snakemake = "poetry run snakemake"
+    if info.screen is None:
+        info.screen = "screen -dmS 0" if info.on_triton else ""
+    info.full_snakemake = f"{info.screen} {info.snakemake}"
+    info.snakemake_args = " " + " ".join(map(shlex.quote, snakemake_args)).strip()
     if info.snakemake_args == "auto":
         if info.on_triton:
             info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
