@@ -23,4 +23,5 @@ classifiers = [
 "Bug Tracker" = "https://github.com/nsiccha/snakemake-utils/issues"
 
 [project.scripts]
+snakemakeutils-interact = "snakemakeutils:interact"
 snakemake-interact = "snakemakeutils:interact"
