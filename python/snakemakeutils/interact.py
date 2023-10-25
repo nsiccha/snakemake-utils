@@ -121,14 +121,16 @@ def print_state(info):
         print(df.sort_values("key"))
 
 def inspect_logs(info):
-    log_path = inquirer.fuzzy(
+    log_paths = inquirer.fuzzy(
         message="Which?",
         choices=[
             Choice([row.PATH], name=f"{row.PATH}: {row.STATE}")
             for row in info.jobs_df[info.jobs_df.STATE != "COMPLETED?"].itertuples()
         ]
     ).execute()
-    os.system(f"less {shlex.quote(str(log_path))}")
+    for log_path in log_paths:
+        print(f"====== {log_path} ======")
+        os.system(f"{info.cmd} {shlex.quote(str(log_path))}")
 
 
 def interact(): 
