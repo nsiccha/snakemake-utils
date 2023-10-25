@@ -151,14 +151,14 @@ def modify_columns(info):
         message="Which?",
         multiselect=True,
         choices=info.jobs_df.columns
-    )
+    ).execute()
 
 def modify_states(info):
     info.states = inquirer.fuzzy(
         message="Which?",
         multiselect=True,
         choices=sorted(info.jobs_df.STATE.unique())
-    )
+    ).execute()
 
 def interact(): 
     parser = argparse.ArgumentParser(prog='Snakemake interact')
