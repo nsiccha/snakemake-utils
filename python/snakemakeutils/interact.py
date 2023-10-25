@@ -178,26 +178,3 @@ def interact():
             choices=choices
         ).execute()
         what(info)
-    return 
-    while True:
-        what = inquirer.fuzzy(
-            message="What?",
-            choices=["print overview", f"change command (current: {cmd})"] + [
-                Choice([row.PATH], name=f"{row.PATH}: {row.STATE}")
-                for row in df[df.STATE != "COMPLETED?"].itertuples()
-            ] + ["print all", "exit"],
-        ).execute()
-        if what == "print overview": 
-            df = update()
-            continue
-        if what == f"change command (current: {cmd})": 
-            cmd = inquirer.text(message=f"Enter command (current: {cmd}):").execute()
-            continue
-        if what == "exit": break
-        if what == "print all":
-            what = df.loc[df.STATE != "COMPLETED?", "PATH"]
-        df = update()
-        for what in what:
-            print(f"\n\n======= {what} =======\n\n")
-            os.system(f"{cmd} {what}")
-            print(f"\n\n======= {what} =======\n\n")
