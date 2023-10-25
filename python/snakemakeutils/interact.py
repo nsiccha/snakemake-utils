@@ -188,22 +188,22 @@ def interact():
     update_logs(info)
     while True:
         print("[Log path]:", info.log_path)
-        choices = [update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, modify_columns, modify_states, quit]
+        choices = [update_logs, inspect_logs, make, select_make, inspect_log, select_log, print_state, modify_columns, modify_states, quit]
         if info.jobs_df is None: 
             choices.remove(inspect_logs)
             choices.remove(modify_columns)
             choices.remove(modify_states)
         descriptions = dict(
-            update_logs=f"Process latest snakemake log file `{info.log_path}`",
-            inspect_logs=f"Inspect (multiple) job log files using `{info.cmd}`",
-            make=f"Make target(s) using `{info.full_snakemake} ... {info.snakemake_args}`",
-            select_make=f"Select target(s) to make from a list generated using `{info.snakemake} -Fn`",
-            inspect_log=f"Inspect selected snakemake log file",
+            update_logs=f"Process latest snakemake log file",
+            inspect_logs=f"Inspect (multiple) job log files ({info.cmd} ...)",
+            make=f"Make target(s) ({info.full_snakemake} ... {info.snakemake_args})",
+            select_make=f"Select target(s) to make from a list generated ({info.snakemake} -Fn)",
+            inspect_log=f"Inspect selected snakemake log file ({info.log_path})",
             select_log=f"Select a different snakemake log file",
-            process_log=f"Process selected snakemake log file",
+            process_log=f"Process selected snakemake log file ({info.log_path})",
             print_state=f"Print internal state of this program",
-            modify_columns=f"Modify columns of jobs that get printed",
-            modify_states=f"Modify states of jobs that get printed",
+            modify_columns=f"Modify columns of jobs that get printed ({info.columns})",
+            modify_states=f"Modify states of jobs that get printed ({info.states})",
             quit="quit"
         )
         choices = [
