@@ -69,6 +69,7 @@ def process_log(info):
         for key, value in row._asdict().items():
             if key == "Index": continue
             info.jobs_df.loc[info.jobs_df.JOBID == row.JOBID, key] = value
+    print(info.jobs_df)
 
     
 def inspect_log(info):
@@ -92,7 +93,7 @@ def make(info, target=None):
     update_logs(info)
 
 def select_make(info):
-    print(f"{info.snakemake}")
+    print(f"{info.snakemake} -Fn")
     info.output_files = re.findall(
         r"    output: (.+)", 
         subprocess.run(
