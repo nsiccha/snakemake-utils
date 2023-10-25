@@ -194,10 +194,10 @@ def interact():
             choices.remove(modify_columns)
             choices.remove(modify_states)
         descriptions = dict(
-            update_logs="Process latest snakemake log file",
-            inspect_logs="Inspect (multiple) job log files using `{info.cmd}`",
+            update_logs=f"Process latest snakemake log file `{info.log_path}`",
+            inspect_logs=f"Inspect (multiple) job log files using `{info.cmd}`",
             make=f"Make target(s) using `{info.full_snakemake} ... {info.snakemake_args}`",
-            select_make=f"Select target(s) to make from a list",
+            select_make=f"Select target(s) to make from a list generated using `{info.snakemake} -Fn`",
             inspect_log=f"Inspect selected snakemake log file",
             select_log=f"Select a different snakemake log file",
             process_log=f"Process selected snakemake log file",
