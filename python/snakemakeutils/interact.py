@@ -125,7 +125,7 @@ def inspect_logs(info):
         message="Which?",
         choices=[
             Choice([row.PATH], name=f"{row.PATH}: {row.STATE}")
-            for row in info.jobs_df[jobs_df.STATE != "COMPLETED?"].itertuples()
+            for row in info.jobs_df[info.jobs_df.STATE != "COMPLETED?"].itertuples()
         ]
     ).execute()
     os.system(f"less {shlex.quote(str(log_path))}")
