@@ -125,7 +125,7 @@ def interact():
     info.on_triton = "triton" in info.hostname
     if info.snakemake is None:
         if info.on_triton:
-            info.snakemake = "screen poetry run snakemake"
+            info.snakemake = "poetry run snakemake"
         else:
             info.snakemake = "poetry run snakemake"
     info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
