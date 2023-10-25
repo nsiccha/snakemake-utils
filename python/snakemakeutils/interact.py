@@ -159,9 +159,12 @@ def interact():
     update_logs(info)
     while True:
         print("[Log path]:", info.log_path)
+        choices = [update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, quit]
+        if info.jobs_df is None: 
+            choices.remove(inspect_logs)
         what = inquirer.fuzzy(
             message="What?",
-            choices=[update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, quit]
+            choices=choices
         ).execute()
         what(info)
     return 
