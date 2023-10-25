@@ -120,6 +120,16 @@ def print_state(info):
     with pd.option_context('display.max_colwidth', None):
         print(df.sort_values("key"))
 
+def inspect_logs(info):
+    log_path = inquirer.fuzzy(
+        message="Which?",
+        choices=[
+            Choice([row.PATH], name=f"{row.PATH}: {row.STATE}")
+            for row in info.jobs_df[jobs_df.STATE != "COMPLETED?"].itertuples()
+        ]
+    ).execute()
+    os.system(f"less {shlex.quote(str(log_path))}")
+
 
 def interact(): 
     parser = argparse.ArgumentParser(prog='Snakemake interact')
@@ -149,7 +159,7 @@ def interact():
         print("[Log path]:", info.log_path)
         what = inquirer.fuzzy(
             message="What?",
-            choices=[update_logs, make, select_make, inspect_log, select_log, process_log, print_state, quit]
+            choices=[update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, quit]
         ).execute()
         what(info)
     return 
