@@ -92,6 +92,7 @@ def make(info, target=None):
     update_logs(info)
 
 def select_make(info):
+    print(f"{info.snakemake}")
     info.output_files = re.findall(
         r"    output: (.+)", 
         subprocess.run(
@@ -101,13 +102,18 @@ def select_make(info):
     make(info, inquirer.fuzzy(message="Target?", choices=info.output_files).execute())
 
 
+def summarize_value(value):
+    if isinstance(value, list): return len(value)
+    value = str(value)
+    if not value: return value
+    return value.splitlines()[0][0:80]
+
 def print_state(info):
     df = pd.DataFrame([
         dict(
             key=key, 
-            value=str(
-                len(value) if isinstance(value, list) else value
-            ).splitlines()[0][0:80])
+            value=summarize_value(value)
+        )
         for key, value in vars(info).items()
     ])
     with pd.option_context('display.max_colwidth', None):
@@ -129,7 +135,7 @@ def interact():
     if info.screen is None:
         info.screen = "screen -dmS 0" if info.on_triton else ""
     info.full_snakemake = f"{info.screen} {info.snakemake}"
-    info.snakemake_args = " " + " ".join(map(shlex.quote, snakemake_args)).strip()
+    info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
     if info.snakemake_args == "auto":
         if info.on_triton:
             info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
