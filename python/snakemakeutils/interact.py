@@ -181,7 +181,7 @@ def interact():
             info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
         else:
             info.snakemake_args = "-c"
-    info.columns = ["PATH", "STATE"]
+    info.columns = ["PATH", "STATE", "TIME"]
     info.states = []
 
     print_state(info)
@@ -193,6 +193,22 @@ def interact():
             choices.remove(inspect_logs)
             choices.remove(modify_columns)
             choices.remove(modify_states)
+        descriptions = dict(
+            update_logs="Process latest snakemake log file",
+            inspect_logs="Inspect (multiple) job log files using `{info.cmd}`",
+            make=f"Make target(s) using `{info.full_snakemake} ... {info.snakemake_args}`",
+            select_make=f"Select target(s) to make from a list",
+            inspect_log=f"Inspect selected snakemake log file",
+            select_log=f"Select a different snakemake log file",
+            process_log=f"Process selected snakemake log file",
+            print_state=f"Print internal state of this program",
+            modify_columns=f"Modify columns of jobs that get printed",
+            modify_states=f"Modify states of jobs that get printed",
+            quit="quit"
+        )
+        choices = [
+            Choice(func, name=descriptions.get(func.__name__)) for func in choices
+        ]
         what = inquirer.fuzzy(
             message="What?",
             choices=choices
