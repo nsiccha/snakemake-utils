@@ -47,6 +47,11 @@ def process_log(info):
         # info.job_stats = pd.read_csv(
         #     io.StringIO(info.job_stats.group(1)), sep="\s+"
         # )
+
+    info.output_files = re.findall(
+        r"    output: (.+)", 
+        info.log_content
+    )
     info.slurm_log_paths = re.findall(
         r"Job .+ has been submitted with SLURM jobid .+ \(log: (.+)\).", 
         info.log_content
@@ -100,7 +105,12 @@ def select_make(info):
             info.snakemake.split() + ["-Fn"], stdout=subprocess.PIPE
         ).stdout.decode('utf-8')
     )
-    make(info, inquirer.fuzzy(message="Target?", choices=info.output_files).execute())
+    targets = inquirer.fuzzy(
+        message="Target?", 
+        multiselect=True,
+        choices=info.output_files
+    ).execute()
+    make(info, " ".join(targets))
 
 
 def summarize_value(value):
