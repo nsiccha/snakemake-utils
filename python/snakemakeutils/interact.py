@@ -123,10 +123,11 @@ def print_state(info):
 def inspect_logs(info):
     log_paths = inquirer.fuzzy(
         message="Which?",
+        multiselect=True,
         choices=[
-            Choice([row.PATH], name=f"{row.PATH}: {row.STATE}")
-            for row in info.jobs_df[info.jobs_df.STATE != "COMPLETED?"].itertuples()
-        ]
+            Choice(row.PATH, name=f"{row.PATH}: {row.STATE}")
+            for row in info.jobs_df.itertuples()
+        ], 
     ).execute()
     for log_path in log_paths:
         print(f"====== {log_path} ======")
