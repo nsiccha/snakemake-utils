@@ -74,7 +74,10 @@ def process_log(info):
         for key, value in row._asdict().items():
             if key == "Index": continue
             info.jobs_df.loc[info.jobs_df.JOBID == row.JOBID, key] = value
-    print(info.jobs_df)
+    print(info.jobs_df.loc[
+        info.jobs_df.STATE.isin(info.states) if info.states else info.jobs_df.STATE != "",
+        info.columns
+    ])
 
     
 def inspect_log(info):
@@ -143,6 +146,19 @@ def inspect_logs(info):
         print(f"====== {log_path} ======")
         os.system(f"{info.cmd} {shlex.quote(str(log_path))}")
 
+def modify_columns(info):
+    info.columns = inquirer.fuzzy(
+        message="Which?",
+        multiselect=True,
+        choices=info.jobs_df.columns
+    )
+
+def modify_states(info):
+    info.states = inquirer.fuzzy(
+        message="Which?",
+        multiselect=True,
+        choices=sorted(info.jobs_df.STATE.unique())
+    )
 
 def interact(): 
     parser = argparse.ArgumentParser(prog='Snakemake interact')
@@ -165,14 +181,18 @@ def interact():
             info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
         else:
             info.snakemake_args = "-c"
+    info.columns = ["PATH", "STATE"]
+    info.states = []
 
     print_state(info)
     update_logs(info)
     while True:
         print("[Log path]:", info.log_path)
-        choices = [update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, quit]
+        choices = [update_logs, inspect_logs, make, select_make, inspect_log, select_log, process_log, print_state, modify_columns, modify_states, quit]
         if info.jobs_df is None: 
             choices.remove(inspect_logs)
+            choices.remove(modify_columns)
+            choices.remove(modify_states)
         what = inquirer.fuzzy(
             message="What?",
             choices=choices
