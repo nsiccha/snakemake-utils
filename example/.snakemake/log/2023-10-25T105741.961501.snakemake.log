@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job              count
+-------------  -------
+all                  1
+python_output        1
+total                2
+
+Select jobs to execute...
+
+[Wed Oct 25 10:57:42 2023]
+rule python_output:
+    output: output/python.json
+    log: logs/python.log
+    jobid: 2
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 10:57:42 2023]
+Finished job 2.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Wed Oct 25 10:57:42 2023]
+localrule all:
+    input: output/lint.log, output/python.json
+    jobid: 0
+    reason: Input files updated by another job: output/python.json
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 10:57:42 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-10-25T105741.961501.snakemake.log

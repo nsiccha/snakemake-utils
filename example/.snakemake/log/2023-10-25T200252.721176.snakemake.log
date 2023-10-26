@@ -1,0 +1,232 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+python_output       32
+total               33
+
+Select jobs to execute...
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_26.json
+    jobid: 27
+    reason: Missing output files: output/python_26.json
+    wildcards: seed=26
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_11.json
+    jobid: 12
+    reason: Missing output files: output/python_11.json
+    wildcards: seed=11
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_28.json
+    jobid: 29
+    reason: Missing output files: output/python_28.json
+    wildcards: seed=28
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_13.json
+    jobid: 14
+    reason: Missing output files: output/python_13.json
+    wildcards: seed=13
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_4.json
+    jobid: 5
+    reason: Missing output files: output/python_4.json
+    wildcards: seed=4
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_6.json
+    jobid: 7
+    reason: Missing output files: output/python_6.json
+    wildcards: seed=6
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_19.json
+    jobid: 20
+    reason: Missing output files: output/python_19.json
+    wildcards: seed=19
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_21.json
+    jobid: 22
+    reason: Missing output files: output/python_21.json
+    wildcards: seed=21
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_27.json
+    jobid: 28
+    reason: Missing output files: output/python_27.json
+    wildcards: seed=27
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_12.json
+    jobid: 13
+    reason: Missing output files: output/python_12.json
+    wildcards: seed=12
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_5.json
+    jobid: 6
+    reason: Missing output files: output/python_5.json
+    wildcards: seed=5
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:52 2023]
+rule python_output:
+    output: output/python_20.json
+    jobid: 21
+    reason: Missing output files: output/python_20.json
+    wildcards: seed=20
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 20:02:53 2023]
+Error in rule python_output:
+    jobid: 14
+    output: output/python_13.json
+
+[Wed Oct 25 20:02:53 2023]
+Error in rule python_output:
+    jobid: 22
+    output: output/python_21.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp64eavflm.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Wed Oct 25 20:02:53 2023]
+Error in rule python_output:
+    jobid: 13
+    output: output/python_12.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp0o5zg98u.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Wed Oct 25 20:02:53 2023]
+[Wed Oct 25 20:02:53 2023]
+Error in rule python_output:
+    jobid: 12
+    output: output/python_11.json
+
+Error in rule python_output:
+    jobid: 5
+    output: output/python_4.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpq9q8te46.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Wed Oct 25 20:02:53 2023]
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp11z4wuvj.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Wed Oct 25 20:02:53 2023]
+[Wed Oct 25 20:02:53 2023]
+Error in rule python_output:
+    jobid: 27
+    output: output/python_26.json
+
+Error in rule python_output:
+    jobid: 6
+    output: output/python_5.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpnugrzlju.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Error in rule python_output:
+    jobid: 28
+    output: output/python_27.json
+
+[Wed Oct 25 20:02:53 2023]
+[Wed Oct 25 20:02:53 2023]
+[Wed Oct 25 20:02:53 2023]
+[Wed Oct 25 20:02:53 2023]
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpo756szrb.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpxwz1_ipb.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Error in rule python_output:
+    jobid: 20
+    output: output/python_19.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp398amdyw.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Error in rule python_output:
+    jobid: 29
+    output: output/python_28.json
+
+Error in rule python_output:
+    jobid: 21
+    output: output/python_20.json
+
+Error in rule python_output:
+    jobid: 7
+    output: output/python_6.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp0k1pv3ek.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp6lr8ydr0.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpd5evflvu.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 9:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmp506er81u.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 9, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-25T200252.721176.snakemake.log

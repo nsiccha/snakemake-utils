@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job              count
+-------------  -------
+all                  1
+python_output        1
+total                2
+
+Select jobs to execute...
+
+[Tue Oct 24 11:30:26 2023]
+rule python_output:
+    output: output/python.json
+    log: logs
+    jobid: 2
+    reason: Missing output files: output/python.json
+    resources: tmpdir=/tmp
+
+Skipped removing non-empty directory logs
+[Tue Oct 24 11:30:26 2023]
+Error in rule python_output:
+    jobid: 2
+    output: output/python.json
+    log: logs (check log file(s) for error details)
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 10:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmpa0nnhjcm.test.py' returned non-zero exit status 1.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 10, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-24T113025.970371.snakemake.log

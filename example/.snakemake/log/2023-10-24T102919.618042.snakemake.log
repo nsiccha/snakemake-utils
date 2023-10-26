@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job      count
+-----  -------
+all          1
+total        1
+
+Select jobs to execute...
+
+[Tue Oct 24 10:29:19 2023]
+rule all:
+    output: output/test.json
+    log: logs/test.log
+    jobid: 0
+    reason: Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Tue Oct 24 10:29:19 2023]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2023-10-24T102919.618042.snakemake.log

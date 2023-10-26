@@ -1,0 +1,54 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job              count
+-------------  -------
+all                  1
+lint                 1
+python_output        1
+total                3
+
+Select jobs to execute...
+
+[Tue Oct 24 11:28:02 2023]
+rule lint:
+    input: snakefile, snakemake/common.smk
+    output: output/lint.log
+    log: output/lint.log
+    jobid: 1
+    reason: Updated input files: snakefile
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 24 11:28:02 2023]
+rule python_output:
+    output: output/python.json
+    jobid: 2
+    reason: Missing output files: output/python.json
+    resources: tmpdir=/tmp
+
+Terminating processes on user request, this might take some time.
+[Tue Oct 24 11:28:02 2023]
+Error in rule python_output:
+    jobid: 2
+    output: output/python.json
+
+RuleException:
+CalledProcessError in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 10:
+Command 'set -euo pipefail;  /home/niko/.cache/pypoetry/virtualenvs/example-UIVl0Dm--py3.10/bin/python /home/niko/github/nsiccha/snakemakeutils/example/.snakemake/scripts/tmprvt3qgr9.test.py' died with <Signals.SIGINT: 2>.
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 10, in __rule_python_output
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Tue Oct 24 11:28:02 2023]
+Error in rule lint:
+    jobid: 1
+    input: snakefile, snakemake/common.smk
+    output: output/lint.log
+    log: output/lint.log (check log file(s) for error details)
+    shell:
+        snakemake --lint > output/lint.log 2> output/lint.log || echo 'Check linting output!'
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Complete log: .snakemake/log/2023-10-24T112802.566404.snakemake.log

@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job             count
+------------  -------
+all                 1
+julia_output        1
+lint                1
+r_output            1
+total               4
+
+Select jobs to execute...
+
+[Tue Oct 24 11:08:29 2023]
+rule r_output:
+    output: output/R.json
+    log: logs
+    jobid: 4
+    reason: Missing output files: output/R.json
+    resources: tmpdir=/tmp
+
+Skipped removing non-empty directory logs
+
+[Tue Oct 24 11:08:29 2023]
+rule lint:
+    input: snakefile, snakemake/common.smk
+    output: output/lint.log
+    log: output/lint.log
+    jobid: 1
+    reason: Updated input files: snakemake/common.smk
+    resources: tmpdir=/tmp
+
+
+[Tue Oct 24 11:08:29 2023]
+rule julia_output:
+    output: output/julia.json
+    log: logs
+    jobid: 3
+    reason: Missing output files: output/julia.json
+    resources: tmpdir=/tmp
+
+Skipped removing non-empty directory logs
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule r_output in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 18:
+Job 4  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/R.json
+WorkflowError:
+Failed to open source file /home/niko/github/nsiccha/snakemakeutils/example/snakemake/env.yaml
+FileNotFoundError: [Errno 2] No such file or directory: '/home/niko/github/nsiccha/snakemakeutils/example/snakemake/env.yaml'
+Removing output files of failed job lint since they might be corrupted:
+output/lint.log
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule julia_output in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 12:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/julia.json
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-24T110829.192238.snakemake.log

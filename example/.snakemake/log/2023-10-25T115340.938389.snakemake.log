@@ -1,0 +1,402 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+python_output       32
+total               33
+
+Select jobs to execute...
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_26.json
+    jobid: 27
+    reason: Missing output files: output/python_26.json
+    wildcards: seed=26
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_11.json
+    jobid: 12
+    reason: Missing output files: output/python_11.json
+    wildcards: seed=11
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_28.json
+    jobid: 29
+    reason: Missing output files: output/python_28.json
+    wildcards: seed=28
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_13.json
+    jobid: 14
+    reason: Missing output files: output/python_13.json
+    wildcards: seed=13
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_4.json
+    jobid: 5
+    reason: Missing output files: output/python_4.json
+    wildcards: seed=4
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_6.json
+    jobid: 7
+    reason: Missing output files: output/python_6.json
+    wildcards: seed=6
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_19.json
+    jobid: 20
+    reason: Missing output files: output/python_19.json
+    wildcards: seed=19
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_21.json
+    jobid: 22
+    reason: Missing output files: output/python_21.json
+    wildcards: seed=21
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_27.json
+    jobid: 28
+    reason: Missing output files: output/python_27.json
+    wildcards: seed=27
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_12.json
+    jobid: 13
+    reason: Missing output files: output/python_12.json
+    wildcards: seed=12
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_5.json
+    jobid: 6
+    reason: Missing output files: output/python_5.json
+    wildcards: seed=5
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_20.json
+    jobid: 21
+    reason: Missing output files: output/python_20.json
+    wildcards: seed=20
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:41 2023]
+Finished job 12.
+1 of 33 steps (3%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:41 2023]
+rule python_output:
+    output: output/python_29.json
+    jobid: 30
+    reason: Missing output files: output/python_29.json
+    wildcards: seed=29
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+Finished job 28.
+2 of 33 steps (6%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_14.json
+    jobid: 15
+    reason: Missing output files: output/python_14.json
+    wildcards: seed=14
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+Finished job 29.
+3 of 33 steps (9%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 14.
+4 of 33 steps (12%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 21.
+5 of 33 steps (15%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 20.
+6 of 33 steps (18%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 22.
+7 of 33 steps (21%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 6.
+8 of 33 steps (24%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_24.json
+    jobid: 25
+    reason: Missing output files: output/python_24.json
+    wildcards: seed=24
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_1.json
+    jobid: 2
+    reason: Missing output files: output/python_1.json
+    wildcards: seed=1
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_2.json
+    jobid: 3
+    reason: Missing output files: output/python_2.json
+    wildcards: seed=2
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_15.json
+    jobid: 16
+    reason: Missing output files: output/python_15.json
+    wildcards: seed=15
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_30.json
+    jobid: 31
+    reason: Missing output files: output/python_30.json
+    wildcards: seed=30
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_17.json
+    jobid: 18
+    reason: Missing output files: output/python_17.json
+    wildcards: seed=17
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+Finished job 5.
+9 of 33 steps (27%) done
+[Wed Oct 25 11:53:42 2023]
+Finished job 13.
+10 of 33 steps (30%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_8.json
+    jobid: 9
+    reason: Missing output files: output/python_8.json
+    wildcards: seed=8
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_10.json
+    jobid: 11
+    reason: Missing output files: output/python_10.json
+    wildcards: seed=10
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+Finished job 27.
+11 of 33 steps (33%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_23.json
+    jobid: 24
+    reason: Missing output files: output/python_23.json
+    wildcards: seed=23
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:42 2023]
+Finished job 7.
+12 of 33 steps (36%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_25.json
+    jobid: 26
+    reason: Missing output files: output/python_25.json
+    wildcards: seed=25
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Wed Oct 25 11:53:42 2023]
+Finished job 2.
+13 of 33 steps (39%) done
+
+[Wed Oct 25 11:53:42 2023]
+rule python_output:
+    output: output/python_3.json
+    jobid: 4
+    reason: Missing output files: output/python_3.json
+    wildcards: seed=3
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+Finished job 30.
+14 of 33 steps (42%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 3.
+15 of 33 steps (45%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 15.
+16 of 33 steps (48%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_31.json
+    jobid: 32
+    reason: Missing output files: output/python_31.json
+    wildcards: seed=31
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_16.json
+    jobid: 17
+    reason: Missing output files: output/python_16.json
+    wildcards: seed=16
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_0.json
+    jobid: 1
+    reason: Missing output files: output/python_0.json
+    wildcards: seed=0
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+Finished job 11.
+17 of 33 steps (52%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 18.
+18 of 33 steps (55%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 9.
+19 of 33 steps (58%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_18.json
+    jobid: 19
+    reason: Missing output files: output/python_18.json
+    wildcards: seed=18
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_7.json
+    jobid: 8
+    reason: Missing output files: output/python_7.json
+    wildcards: seed=7
+    resources: tmpdir=/tmp
+
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_9.json
+    jobid: 10
+    reason: Missing output files: output/python_9.json
+    wildcards: seed=9
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+Finished job 24.
+20 of 33 steps (61%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 31.
+21 of 33 steps (64%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:43 2023]
+rule python_output:
+    output: output/python_22.json
+    jobid: 23
+    reason: Missing output files: output/python_22.json
+    wildcards: seed=22
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+Finished job 25.
+22 of 33 steps (67%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 16.
+23 of 33 steps (70%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 26.
+24 of 33 steps (73%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 10.
+25 of 33 steps (76%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 32.
+26 of 33 steps (79%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 4.
+27 of 33 steps (82%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 8.
+28 of 33 steps (85%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 23.
+29 of 33 steps (88%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 17.
+30 of 33 steps (91%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 1.
+31 of 33 steps (94%) done
+[Wed Oct 25 11:53:43 2023]
+Finished job 19.
+32 of 33 steps (97%) done
+Select jobs to execute...
+
+[Wed Oct 25 11:53:43 2023]
+localrule all:
+    input: output/python_0.json, output/python_1.json, output/python_2.json, output/python_3.json, output/python_4.json, output/python_5.json, output/python_6.json, output/python_7.json, output/python_8.json, output/python_9.json, output/python_10.json, output/python_11.json, output/python_12.json, output/python_13.json, output/python_14.json, output/python_15.json, output/python_16.json, output/python_17.json, output/python_18.json, output/python_19.json, output/python_20.json, output/python_21.json, output/python_22.json, output/python_23.json, output/python_24.json, output/python_25.json, output/python_26.json, output/python_27.json, output/python_28.json, output/python_29.json, output/python_30.json, output/python_31.json
+    jobid: 0
+    reason: Input files updated by another job: output/python_14.json, output/python_16.json, output/python_24.json, output/python_29.json, output/python_30.json, output/python_10.json, output/python_2.json, output/python_13.json, output/python_20.json, output/python_31.json, output/python_19.json, output/python_12.json, output/python_8.json, output/python_4.json, output/python_21.json, output/python_3.json, output/python_27.json, output/python_28.json, output/python_1.json, output/python_22.json, output/python_18.json, output/python_25.json, output/python_17.json, output/python_6.json, output/python_7.json, output/python_5.json, output/python_11.json, output/python_23.json, output/python_9.json, output/python_0.json, output/python_15.json, output/python_26.json
+    resources: tmpdir=/tmp
+
+[Wed Oct 25 11:53:43 2023]
+Finished job 0.
+33 of 33 steps (100%) done
+Complete log: .snakemake/log/2023-10-25T115340.938389.snakemake.log

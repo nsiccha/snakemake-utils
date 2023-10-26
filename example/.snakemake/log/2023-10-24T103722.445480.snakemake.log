@@ -1,0 +1,3 @@
+CreateRuleException in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 3:
+The name python_output is already used by another rule
+  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 3, in <module>

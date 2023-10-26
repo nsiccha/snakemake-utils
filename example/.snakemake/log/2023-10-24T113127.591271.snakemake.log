@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 12
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job              count
+-------------  -------
+all                  1
+python_output        1
+total                2
+
+Select jobs to execute...
+
+[Tue Oct 24 11:31:27 2023]
+rule python_output:
+    output: output/python.json
+    log: logs
+    jobid: 2
+    reason: Missing output files: output/python.json
+    resources: tmpdir=/tmp
+
+Skipped removing non-empty directory logs
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule python_output in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 6:
+Job 2  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/python.json
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-24T113127.591271.snakemake.log
