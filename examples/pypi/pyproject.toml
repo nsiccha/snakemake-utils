@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "example"
+name = "pypi"
 version = "0.1.0"
 description = ""
-authors = ["Nikolas Siccha <nikolassiccha@gmail.com>"]
+authors = ["Nikolas Siccha <nikolas.siccha@aalto.fi>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-snakemakeutils = {path = "../python", develop = true}
+snakemakehelpers = "^0.0.1"
 
 
 [build-system]

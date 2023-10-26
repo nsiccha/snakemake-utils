@@ -22,6 +22,7 @@ def path_to_dict(path): return dict(PATH=path, JOBID=jobid(path), STATE="COMPLET
 def update_logs(info):
     info.log_paths = []
     info.log_path = None
+    info.jobs_df = None
     if not info.path.exists(): 
         return print(f"{info.path} does not exist!")
     base = info.path / ".snakemake"
@@ -36,6 +37,7 @@ def update_logs(info):
     
 
 def process_log(info):
+    info.jobs_df = None
     with open(info.log_path, "r") as fd:
         info.log_content = fd.read()
     info.job_stats = re.search(
@@ -63,7 +65,6 @@ def process_log(info):
     info.progress = (
         [None] + re.findall(r"[0-9]+ of [0-9]+ steps \(.+\) done", info.log_content)
     )[-1]
-    info.jobs_df = None
     if not info.slurm_log_paths: 
         return print("[Jobs] No slurm logs found!")
     info.jobs_df = pd.DataFrame(map(path_to_dict, info.slurm_log_paths))

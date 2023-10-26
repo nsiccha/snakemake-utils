@@ -1,0 +1,17 @@
+include: "snakemake/common.smk"
+seeds = range(32)
+
+rule all:
+    input: expand("output/python_{seed}.json", seed=seeds)
+
+rule python_output:
+    output: "output/python_{seed}.json"
+    script: "scripts/test.py" 
+
+rule julia_output:
+    output: "output/julia.json"
+    script: "scripts/test.jl" 
+
+rule r_output:
+    output: "output/R.json"
+    script: "scripts/test.R"  
