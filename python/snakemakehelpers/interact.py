@@ -103,12 +103,20 @@ def make(info, target=None):
 
 def select_make(info):
     print(f"{info.snakemake} -Fn")
+    process = subprocess.run(
+        info.snakemake.split() + ["-Fn"], 
+        stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+    stdout = process.stdout.decode('utf-8')
+    if process.returncode != 0:
+        return print("Snakemake errored:\n\n{stdout}")
     info.output_files = re.findall(
         r"    output: (.+)", 
-        subprocess.run(
-            info.snakemake.split() + ["-Fn"], stdout=subprocess.PIPE
-        ).stdout.decode('utf-8')
+        stdout
     )
+    if not info.output_files:
+        return print("No possible output files found!")
+
     targets = inquirer.fuzzy(
         message="Target?", 
         multiselect=True,
@@ -118,9 +126,11 @@ def select_make(info):
 
 
 def summarize_value(value):
-    if isinstance(value, list): return len(value)
+    if isinstance(value, list): 
+        return len(value)
     value = str(value)
-    if not value: return value
+    if not value: 
+        return value
     return value.splitlines()[0][0:80]
 
 def print_state(info):

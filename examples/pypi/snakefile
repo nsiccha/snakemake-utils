@@ -1,4 +1,3 @@
-include: "snakemake/common.smk"
 seeds = range(32)
 
 rule all:
