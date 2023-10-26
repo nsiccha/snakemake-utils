@@ -3,13 +3,13 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "snakemakeutils"
+name = "snakemakehelpers"
 version = "0.0.1"
 authors = [
   { name="Nikolas Siccha", email="nikolassiccha@gmail.com" },
 ]
 dependencies = ["snakemake", "pandas", "InquirerPy"]
-description = "A bundle of snakemake utilities"
+description = "A bundle of snakemake helper functions."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
@@ -19,9 +19,8 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/nsiccha/snakemake-utils"
-"Bug Tracker" = "https://github.com/nsiccha/snakemake-utils/issues"
+"Homepage" = "https://github.com/nsiccha/snakemakehelpers"
+"Bug Tracker" = "https://github.com/nsiccha/snakemakehelpers/issues"
 
 [project.scripts]
-snakemakeutils-interact = "snakemakeutils:interact"
-snakemake-interact = "snakemakeutils:interact"
+snakemake-interact = "snakemakehelpers:interact"
