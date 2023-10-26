@@ -1124,19 +1124,24 @@ reports = ["pygments"]
 
 [[package]]
 name = "snakemakehelpers"
-version = "0.0.1"
+version = "0.0.2"
 description = "A bundle of snakemake helper functions."
 optional = false
 python-versions = ">=3.7"
-files = [
-    {file = "snakemakehelpers-0.0.1-py3-none-any.whl", hash = "sha256:ab9ebda183fbaaac0898187caca8845fab5cdbaae353a7124fca90e61581b895"},
-    {file = "snakemakehelpers-0.0.1.tar.gz", hash = "sha256:2884efea3fc6b8e61860829b9e96ccd2b1c946ddb88d6859f92b222b73d8004b"},
-]
+files = []
+develop = false
 
 [package.dependencies]
 inquirerpy = "*"
 pandas = "*"
 snakemake = "*"
+
+[package.source]
+type = "git"
+url = "git@github.com:nsiccha/snakemakehelpers.git"
+reference = "HEAD"
+resolved_reference = "d18213cf62ad9782642994c7079a55a71b2b82f8"
+subdirectory = "python"
 
 [[package]]
 name = "stopit"
@@ -1344,4 +1349,4 @@ pyyaml = ">=6.0,<7.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "e1e614d47223eff3a9d78972ea82285ec5a07c232e89b2eb643bcca5ba212322"
+content-hash = "8372086c8709278380ee1e0508ceab8fae5a8722810621b2be6e5aadd9928fc0"

@@ -109,7 +109,7 @@ def select_make(info):
     )
     stdout = process.stdout.decode('utf-8')
     if process.returncode != 0:
-        return print("Snakemake errored:\n\n{stdout}")
+        return print(f"Snakemake errored:\n\n{stdout}")
     info.output_files = re.findall(
         r"    output: (.+)", 
         stdout
