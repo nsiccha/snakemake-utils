@@ -13,13 +13,18 @@ Run `poetry run snakemake-interact` from a directory with a snakefile to interac
 Current options to interact are:
 
 * Process latest snakemake log file:
+
     Searches the `.snakemake/log` directory for log files and parses the most recent one.
 * Select target(s) to make (poetry run snakemake -Fn):
+
     Generates a list of possible output files via `poetry run snakemake -Fn`, from which the user can choose multiple ones to make.
 * Make target(s) ( poetry run snakemake ... -c):
+
     Makes user provided targets. 
 * Inspect selected snakemake log file (...):
+
     Inspects the selected log file using `less`. 
 * Select a different snakemake log file:
+
     Select another log file from `.snakemake/log` to process.
 * Print internal state of this program
