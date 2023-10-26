@@ -7,7 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-snakemakehelpers = { git = "git@github.com:nsiccha/snakemakehelpers.git", subdirectory = "python" }
+snakemakehelpers = {path = "../../python", develop = true}
 
 
 [build-system]

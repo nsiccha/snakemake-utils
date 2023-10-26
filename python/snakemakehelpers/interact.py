@@ -187,7 +187,7 @@ def interact():
         info.screen = "screen -dmS 0" if info.on_triton else ""
     info.full_snakemake = f"{info.screen} {info.snakemake}"
     info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
-    if info.snakemake_args == "auto":
+    if info.snakemake_args in ["auto", ""]:
         if info.on_triton:
             info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
         else:

@@ -1129,7 +1129,7 @@ description = "A bundle of snakemake helper functions."
 optional = false
 python-versions = ">=3.7"
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 inquirerpy = "*"
@@ -1137,11 +1137,8 @@ pandas = "*"
 snakemake = "*"
 
 [package.source]
-type = "git"
-url = "git@github.com:nsiccha/snakemakehelpers.git"
-reference = "HEAD"
-resolved_reference = "d18213cf62ad9782642994c7079a55a71b2b82f8"
-subdirectory = "python"
+type = "directory"
+url = "../../python"
 
 [[package]]
 name = "stopit"
@@ -1349,4 +1346,4 @@ pyyaml = ">=6.0,<7.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "8372086c8709278380ee1e0508ceab8fae5a8722810621b2be6e5aadd9928fc0"
+content-hash = "08f600a643b27c1ca9800d970158318fcc1f761af9596a92c3c2fde1a780f8dc"
