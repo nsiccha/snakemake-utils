@@ -17,7 +17,7 @@ Current options to interact are:
     Searches the `.snakemake/log` directory for log files and parses the most recent one.
 * Select target(s) to make (poetry run snakemake -Fn):
 
-    Generates a list of possible output files via `poetry run snakemake -Fn`, from which the user can choose multiple ones to make.
+    Generates a list of possible output files via `poetry run snakemake -Fn`, from which the user can choose one or more to make.
 * Make target(s) ( poetry run snakemake ... -c):
 
     Makes user provided targets. 
