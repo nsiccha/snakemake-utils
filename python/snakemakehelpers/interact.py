@@ -79,6 +79,7 @@ def process_log(info):
         info.jobs_df.STATE.isin(info.states) if info.states else info.jobs_df.STATE != "",
         info.columns
     ])
+    print(info.jobs_df.groupby(["STATE"])["STATE"].count())
 
     
 def inspect_log(info):
@@ -99,6 +100,8 @@ def make(info, target=None):
     if target is None: 
         target = inquirer.text(message="Target?").execute()
     print_and_run(f"{info.full_snakemake} {target} {info.snakemake_args}")
+    if info.screen:
+        print("Started screen session in background, refresh logs manually in a bit...")
     update_logs(info)
 
 def select_make(info):

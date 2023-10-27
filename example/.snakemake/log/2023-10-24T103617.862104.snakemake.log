@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule all in file /home/niko/github/nsiccha/snakemakeutils/example/snakefile, line 3:
-Missing input files for rule all:
-    affected files:
-        output/python.json
-        output/R.json
-        output/julia.json

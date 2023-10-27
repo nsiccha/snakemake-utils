@@ -1,4 +1,0 @@
-AttributeError in file /home/niko/github/nsiccha/snakemakeutils/example/snakemake/common.smk, line 4:
-'function' object has no attribute 'get_wildcard_names'
-  File "/home/niko/github/nsiccha/snakemakeutils/example/snakefile", line 1, in <module>
-  File "/home/niko/github/nsiccha/snakemakeutils/example/snakemake/common.smk", line 4, in <module>
