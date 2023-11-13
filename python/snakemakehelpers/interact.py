@@ -205,7 +205,7 @@ def interact():
     info.states = []
 
     if info.targets:
-        make(" ".join(map(shlex.quote, info.targets)))
+        make(info, " ".join(map(shlex.quote, info.targets)))
     print_state(info)
     update_logs(info)
     while True:
