@@ -6,6 +6,7 @@ import os, shlex
 import argparse
 from argparse import Namespace
 import socket
+import shutil
 
 def print_and_run(cmd):
     print(cmd)
@@ -179,6 +180,7 @@ def interact():
     parser.add_argument("--cmd", default="cat")
     parser.add_argument("--path", default=".")
     parser.add_argument("--hostname", default=socket.gethostname())
+    parser.add_argument("--slurm", default=None)
     parser.add_argument("--snakemake", default=None)
     parser.add_argument("--screen", default=None)
     parser.add_argument("--jobs", default=256)
@@ -190,10 +192,16 @@ def interact():
     info = parser.parse_args()
     info.path = pathlib.Path(info.path)
     info.on_triton = "triton" in info.hostname
+    if info.slurm is None:
+        if shutil.which("slurm"): info.slurm = True
+        else: info.slurm = False
     if info.snakemake is None:
-        info.snakemake = "poetry run snakemake"
+        if shutil.which("snakemake"): info.snakemake = "snakemake"
+        elif shutil.which("poetry"): info.snakemake = "poetry run snakemake"
+        else: raise ValueError("Could not determine snakemake executable")
     if info.screen is None:
-        info.screen = "screen -dmS 0" if info.on_triton else ""
+        if info.slurm and shutil.which("screen"): info.screen = "screen -dmS 0"
+        else: info.screen = "" 
     info.full_snakemake = f"{info.screen} {info.snakemake}"
     # info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
     if info.snakemake_args in ["auto", ""]:
