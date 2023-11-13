@@ -181,7 +181,13 @@ def interact():
     parser.add_argument("--hostname", default=socket.gethostname())
     parser.add_argument("--snakemake", default=None)
     parser.add_argument("--screen", default=None)
-    info, snakemake_args = parser.parse_known_args()
+    parser.add_argument("--jobs", default=256)
+    parser.add_argument("--runtime", default=10)
+    parser.add_argument("--mem", default=1000)
+    parser.add_argument("--cpu", default=1)
+    parser.add_argument("--snakemake-args", default="auto")
+    parser.add_argument("targets", nargs="*")
+    info = parser.parse_args()
     info.path = pathlib.Path(info.path)
     info.on_triton = "triton" in info.hostname
     if info.snakemake is None:
@@ -189,15 +195,17 @@ def interact():
     if info.screen is None:
         info.screen = "screen -dmS 0" if info.on_triton else ""
     info.full_snakemake = f"{info.screen} {info.snakemake}"
-    info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
+    # info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
     if info.snakemake_args in ["auto", ""]:
         if info.on_triton:
-            info.snakemake_args = "--keep-going --keep-incomplete --slurm -j1024 --default-resources runtime=10 mem_mb=1000 cpus_per_task=1"
+            info.snakemake_args = f"--keep-going --keep-incomplete --slurm -j{info.jobs} --default-resources runtime={info.runtime} mem_mb={info.mem} cpus_per_task={info.cpu}"
         else:
             info.snakemake_args = "-c"
     info.columns = ["PATH", "STATE", "TIME"]
     info.states = []
 
+    if info.targets:
+        make(" ".join(map(shlex.quote, info.targets)))
     print_state(info)
     update_logs(info)
     while True:
