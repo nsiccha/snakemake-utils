@@ -7,6 +7,10 @@ import argparse
 from argparse import Namespace
 import socket
 import shutil
+import random, string
+
+def random_string(length, letters=string.ascii_letters):
+    return ''.join(random.choice(letters) for i in range(length))
 
 def print_and_run(cmd):
     print(cmd)
@@ -200,7 +204,7 @@ def interact():
         elif shutil.which("poetry"): info.snakemake = "poetry run snakemake"
         else: raise ValueError("Could not determine snakemake executable")
     if info.screen is None:
-        if info.slurm and shutil.which("screen"): info.screen = "screen -dmS 0"
+        if info.slurm and shutil.which("screen"): info.screen = "screen -dmS " + random_string(4)
         else: info.screen = "" 
     info.full_snakemake = f"{info.screen} {info.snakemake}"
     # info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
