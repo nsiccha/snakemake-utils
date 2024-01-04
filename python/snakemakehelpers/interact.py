@@ -220,6 +220,7 @@ def interact():
         make(info, " ".join(map(shlex.quote, info.targets)))
     print_state(info)
     update_logs(info)
+    if getattr(info, "progress", None) is not None: print(info.progress)
     while True:
         print("[Log path]:", info.log_path)
         choices = [
