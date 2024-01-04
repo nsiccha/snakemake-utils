@@ -192,12 +192,14 @@ def interact():
     parser.add_argument("--mem", default=1000)
     parser.add_argument("--cpu", default=1)
     parser.add_argument("--snakemake-args", default="auto")
+    parser.add_argument("-n", "--dry-run", action="store_true")
+    parser.add_argument("-c", "--local", action="store_true")
     parser.add_argument("targets", nargs="*")
     info = parser.parse_args()
     info.path = pathlib.Path(info.path)
     info.on_triton = "triton" in info.hostname
     if info.slurm is None:
-        if shutil.which("slurm"): info.slurm = True
+        if shutil.which("slurm") and not info.local and not info.dry_run: info.slurm = True
         else: info.slurm = False
     if info.snakemake is None:
         if shutil.which("snakemake"): info.snakemake = "snakemake"
@@ -209,10 +211,12 @@ def interact():
     info.full_snakemake = f"{info.screen} {info.snakemake}"
     # info.snakemake_args = " ".join(map(shlex.quote, snakemake_args)).strip()
     if info.snakemake_args in ["auto", ""]:
-        if info.on_triton:
+        if info.slurm:
             info.snakemake_args = f"--keep-going --keep-incomplete --slurm -j{info.jobs} --default-resources runtime={info.runtime} mem_mb={info.mem} cpus_per_task={info.cpu}"
         else:
             info.snakemake_args = "-c"
+            if info.dry_run: 
+                info.snakemake_args = "-n"
     info.columns = ["PATH", "STATE", "TIME"]
     info.states = []
 
@@ -220,9 +224,9 @@ def interact():
         make(info, " ".join(map(shlex.quote, info.targets)))
     print_state(info)
     update_logs(info)
-    if getattr(info, "progress", None) is not None: print(info.progress)
     while True:
         print("[Log path]:", info.log_path)
+        if getattr(info, "progress", None) is not None: print(info.progress)
         choices = [
             update_logs, inspect_logs, select_make, 
             modify_columns, modify_states, 
